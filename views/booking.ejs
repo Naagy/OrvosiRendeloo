@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foglalás - Orvosi Rendelő</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 1em;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    a {
+      text-decoration: none;
+      color: #4CAF50;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
+    }
+    a:hover {
+      color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Foglalás: <%= day %> - <%= time %></h1>
+  </header>
+
+  <div class="form-container">
+    <form action="/book/<%= day %>/<%= time %>" method="POST">
+      <label for="name">Név:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Telefonszám:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <button type="submit">Foglalás</button>
+    </form>
+    <a href="/">Vissza a főoldalra</a>
+  </div>
+</body>
+</html>

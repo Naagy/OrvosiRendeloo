@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orvosi Rendelő Fogadási Rend</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        select {
+            padding: 10px;
+            font-size: 1.1em;
+            margin: 20px auto;
+            display: block;
+            width: 200px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Orvosi Rendelő Fogadási Rend</h1>
+    </header>
+
+    <form action="/day" method="GET" style="text-align: center;">
+        <label for="day">Válasszon egy napot:</label>
+        <select id="day" name="day" onchange="window.location.href='/day/' + this.value;">
+            <option value="" disabled selected>Válasszon...</option>
+            <% days.forEach(function(day) { %>
+                <option value="<%= day %>"><%= day %></option>
+            <% }); %>
+        </select>
+    </form>
+
+    <footer>
+        <p>© 2024 Orvosi Rendelő - Minden jog fenntartva</p>
+    </footer>
+</body>
+</html>

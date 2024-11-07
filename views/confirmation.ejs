@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foglalás Visszaigazolása - Orvosi Rendelő</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .confirmation-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .confirmation-container h2 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    .confirmation-details p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    .confirmation-details strong {
+      color: #4CAF50;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    a {
+      text-decoration: none;
+      color: #4CAF50;
+      display: block;
+      margin-top: 15px;
+    }
+    a:hover {
+      color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Foglalás Visszaigazolása</h1>
+  </header>
+
+  <div class="confirmation-container">
+    <h2>Köszönjük a foglalást!</h2>
+
+    <div class="confirmation-details">
+      <p><strong>Nap:</strong> <%= day %></p>
+      <p><strong>Időpont:</strong> <%= time %></p>
+      <p><strong>Név:</strong> <%= name %></p>
+      <p><strong>Telefonszám:</strong> <%= phone %></p>
+    </div>
+
+    <button onclick="window.location.href='/'">Vissza a főoldalra</button>
+    <a href="/">Vissza a foglalási időpontokhoz</a>
+  </div>
+
+</body>
+</html>

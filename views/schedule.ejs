@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= day %> - Orvosi Rendelő</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 8px;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #45a049;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><%= day %> - Orvosi Rendelő</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Időpont</th>
+                <th>Orvos</th>
+                <th>Szakorvos</th>
+                <th>Foglalás</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% schedule.forEach(function(item) { %>
+                <tr>
+                    <td><%= item.time %></td>
+                    <td><%= item.doctor %></td>
+                    <td><%= item.specialty %></td>
+                    <td><a href="/book/<%= day %>/<%= item.time %>">Foglalás</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <footer>
+        <p>© 2024 Orvosi Rendelő - Minden jog fenntartva</p>
+    </footer>
+</body>
+</html>
